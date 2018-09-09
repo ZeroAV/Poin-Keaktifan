@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".ListPostActivity">
         </activity>
+        <activity android:name=".BikinPostActivity"></activity>
     </application>
 
 </manifest>
