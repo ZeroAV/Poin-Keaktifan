@@ -21,6 +21,8 @@
         <activity android:name=".BikinPostActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".FaqActivity"></activity>
+        <activity android:name=".ListPostActivity">
+        </activity>
     </application>
 
 </manifest>
