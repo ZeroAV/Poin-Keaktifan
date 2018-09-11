@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".BikinPostActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".FaqActivity"></activity>
     </application>
 
 </manifest>
