@@ -10,15 +10,28 @@ import com.github.kittinunf.fuel.core.FuelError;
 import com.github.kittinunf.fuel.core.Handler;
 import com.github.kittinunf.fuel.core.Request;
 import com.github.kittinunf.fuel.core.Response;
+import android.support.design.widget.FloatingActionButton;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fab = findViewById(R.id.fab_buat);
         testGet();
-        startActivity(new Intent(this, BikinPostActivity.class));
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("fab", "instance initializer: fab clicked");
+                startActivity(new Intent(view.getContext(), BikinPostActivity.class));
+            }
+        });
     }
 
     private void testGet() {
