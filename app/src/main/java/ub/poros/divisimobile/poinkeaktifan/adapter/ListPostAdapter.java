@@ -23,7 +23,7 @@ public class ListPostAdapter extends RecyclerView.Adapter<ListPostAdapter.MyView
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case
         public TextView mTextName, mTextPoint, mTextDesc;
         private Button btn10, btn20, btn50, btn100;
@@ -48,19 +48,21 @@ public class ListPostAdapter extends RecyclerView.Adapter<ListPostAdapter.MyView
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btn_10:
-                    Toast.makeText(v.getContext(), "10", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "10 Poin keaktifan diberikan", Toast.LENGTH_SHORT).show();
+
                     break;
                 case R.id.btn_20:
-                    Toast.makeText(v.getContext(), "20", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "20 Poin keaktifan diberikan", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_50:
-                    Toast.makeText(v.getContext(), "50", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "50 Poin keaktifan diberikan", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_100:
-                    Toast.makeText(v.getContext(), "100", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "100 Poin keaktifan diberikan", Toast.LENGTH_SHORT).show();
                     break;
-
             }
+            mDataset.remove(getAdapterPosition());
+                    notifyDataSetChanged();
         }
     }
 
