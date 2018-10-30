@@ -9,11 +9,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import ub.poros.divisimobile.poinkeaktifan.Poin;
 import ub.poros.divisimobile.poinkeaktifan.Post;
 import ub.poros.divisimobile.poinkeaktifan.R;
 
 public class ListPostAdapter extends RecyclerView.Adapter<ListPostAdapter.MyViewHolder>{
-    private List<Post> mDataset;
+    private List<Poin> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -31,7 +32,7 @@ public class ListPostAdapter extends RecyclerView.Adapter<ListPostAdapter.MyView
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ListPostAdapter(List<Post> myDataset) {
+    public ListPostAdapter(List<Poin> myDataset) {
         mDataset = myDataset;
     }
 
@@ -51,10 +52,10 @@ public class ListPostAdapter extends RecyclerView.Adapter<ListPostAdapter.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        Post post = mDataset.get(position);
-        holder.mTextName.setText(post.getNama());
-        holder.mTextDesc.setText(post.getDeskripsi());
-        holder.mTextPoint.setText(post.getPoin().toString());
+        Poin poin = mDataset.get(position);
+        holder.mTextName.setText(poin.getName());
+        holder.mTextDesc.setText(poin.getDescription());
+        holder.mTextPoint.setText(poin.getPoin().toString());
 
     }
 
