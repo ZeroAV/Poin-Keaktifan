@@ -3,7 +3,9 @@ package ub.poros.divisimobile.poinkeaktifan;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.util.Log;
 
 import com.androidnetworking.AndroidNetworking;
@@ -47,12 +49,15 @@ public class ListPostActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
+        mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
         mAdapter = new ListPostAdapter(poins);
         mRecyclerView.setAdapter(mAdapter);
+
+        SnapHelper helper = new LinearSnapHelper();
+        helper.attachToRecyclerView(mRecyclerView);
     }
 
     private void getPoin() {
